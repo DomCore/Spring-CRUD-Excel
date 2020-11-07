@@ -20,14 +20,45 @@ public class WorkController {
         this.workService = workService;
     }
 
-    @RequestMapping(value = "/")
+/*    @RequestMapping(value = "/")
     public ModelAndView allWorks() {
         List<Work> works = workService.allWorks();
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("works");
         modelAndView.addObject("worksList", works);
         return modelAndView;
+    }*/
+    @RequestMapping("/")
+    public String start(){
+    return "landing-page";
+}
+    @RequestMapping("/index")
+    public String game(){
+        return "index";
     }
+    @RequestMapping("/lobby")
+    public String lobby(){
+        return "lobby";
+    }
+    @RequestMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public ModelAndView searchWorks(@ModelAttribute("from") String from, @ModelAttribute("to") String to) {
